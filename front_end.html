@@ -1,13 +1,60 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <!-- -->
 <head>
 	<title> RaspberryPi Generic Controller </title>
-	<link rel="sylesheet" type="text/css"  href="front_end_stylesheet.css"/>
+	<link rel="stylesheet" type="text/css"  href="front_end_stylesheet.css"/>
 </head>
 <body>
-	<div class="header"></div>
+	<div class="header"> <strong><h1> Generic Raspberry Pi Controller </h1></strong> </div>
+	<h2>Physical Pin Layout</h2>
+		<table id="pinlayout">
+			<tr>
+			<td class="pin pwr_5v"></td>
+			<td class="pin pwr_5v"></td>
+			<td class="pin gnd"></td>
+			<td class="pin gpio">14</td>
+			<td class="pin gpio">15</td>
+			<td class="pin gpio">18</td>
+			<td class="pin gnd"></td>
+			<td class="pin gpio">23</td>
+			<td class="pin gpio">24</td>
+			<td class="pin gnd"></td>
+			<td class="pin gpio">25</td>
+			<td class="pin gpio">8</td>
+			<td class="pin gpio">7</td>
+			<td class="pin id_eeprom"></td>
+			<td class="pin gnd"></td>
+			<td class="pin gpio">12</td>
+			<td class="pin gnd"></td>
+			<td class="pin gpio">16</td>
+			<td class="pin gpio">20</td>
+			<td class="pin gpio">21</td>											
+			</tr>
+			<tr>
+			<td class="pin pwr_3_3v"></td>
+			<td class="pin gpio">2</td>
+			<td class="pin gpio">3</td>
+			<td class="pin gpio">4</td>
+			<td class="pin gnd"></td>
+			<td class="pin gpio">17</td>
+			<td class="pin gpio">27</td>
+			<td class="pin gpio">22</td>
+			<td class="pin pwr_3_3v"></td>
+			<td class="pin gpio">10</td>
+			<td class="pin gpio">9</td>
+			<td class="pin gpio">11</td>
+			<td class="pin gnd"></td>
+			<td class="pin id_eeprom"></td>
+			<td class="pin gpio">5</td>
+			<td class="pin gpio">6</td>
+			<td class="pin gpio">13</td>
+			<td class="pin gpio">19</td>
+			<td class="pin gpio">26</td>
+			<td class="pin gnd"></td>					
+			</tr>
+		</table>
+	<p id="pin_numbering_note"> <em>Note: The numbering system is utilizing the gpio numbering system and not the physical pin numbering. </em> </p>
 	<div class="footer"></div>
-	<p> Some sample text. </p>
 </body>
 </html>

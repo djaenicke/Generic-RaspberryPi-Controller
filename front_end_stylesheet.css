@@ -1,19 +1,76 @@
 body {
-	background-color: lightblue;
+	background-color: #669999;
+	font-family: Tahoma, Geneva, sans-serif;
+	margin:80px 80px 60px 60px;
+}
+
+h1 {
+	font-size: 1.25em;
+}
+
+h2 {
+	font-size: 1em;
+}
+
+#pinlayout{
+	border: 2px solid black;
+}
+
+.pin {
+	text-align: center;
+	width: 1.2em;
+	height: 1.2em;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.gpio {
+	color: black;
+	background: #0099ff;
+}
+
+.gnd {
+	color: white;
+	background: black;
+}
+
+.pwr_5v {
+	color: black;
+	background: red;
+}
+
+.pwr_3_3v {
+	color: black;
+	background: orange;
+}
+
+.id_eeprom {
+	color: black;
+	background: white;
 }
 
 .header {
-	border: solid;
-	border-radius: 2px;
-	width: 50;
-	height: 50;
-	background-color: #0000ff;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 5%;
+	width: 100%;
+	background-color: #0099ff;
+	border: 2px solid black;
+	text-align: center;
+}
+
+#pin_numbering_note {
+	font-size: .75em;
 }
 
 .footer {
-	border: solid;
-	border-radius: 2px;
-	width: 50;
-	height: 50;
-	background-color: #00ff00;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 5%;
+	width: 100%;
+	background-color: #0099ff;
+	border: 2px solid black;
 }
