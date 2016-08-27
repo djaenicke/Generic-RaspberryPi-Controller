@@ -1,0 +1,19 @@
+body {
+	background-color: lightblue;
+}
+
+.header {
+	border: solid;
+	border-radius: 2px;
+	width: 50;
+	height: 50;
+	background-color: #0000ff;
+}
+
+.footer {
+	border: solid;
+	border-radius: 2px;
+	width: 50;
+	height: 50;
+	background-color: #00ff00;
+}
