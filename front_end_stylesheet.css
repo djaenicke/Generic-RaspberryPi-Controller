@@ -4,19 +4,16 @@ body {
 	margin:80px 80px 60px 60px;
 }
 
-h1 {
-	font-size: 1.25em;
-}
-
 h2 {
 	font-size: 1em;
 }
 
 #pinlayout{
 	border: 2px solid black;
+	table-layout: fixed;
 }
 
-.pin {
+td.pin {
 	text-align: center;
 	width: 1.2em;
 	height: 1.2em;
@@ -25,51 +22,67 @@ h2 {
 	border-radius: 50%;
 }
 
-.gpio {
+td.gpio {
 	color: black;
 	background: #0099ff;
 }
 
-.gnd {
-	color: white;
+td.gnd {
+	color: black;
 	background: black;
 }
 
-.pwr_5v {
-	color: black;
+td.pwr_5v {
+	color: red;
 	background: red;
 }
 
-.pwr_3_3v {
-	color: black;
+td.pwr_3_3v {
+	color: orange;
 	background: orange;
 }
 
-.id_eeprom {
-	color: black;
+td.id_eeprom {
+	color: white;
 	background: white;
 }
 
-.header {
+div.header {
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	height: 5%;
+	height: 30px;
 	width: 100%;
 	background-color: #0099ff;
 	border: 2px solid black;
 	text-align: center;
+	padding-top: 5px;
 }
 
 #pin_numbering_note {
 	font-size: .75em;
 }
 
-.footer {
+div.input_group_left {
+	font-size: .85em;
+	float: left;
+}
+
+div.input_group_right {
+	font-size: .85em;
+	margin-left:100px;
+}
+
+div.input_label {
+	float: left;
+	width: 4em;
+}
+
+div.footer {
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
-	height: 5%;
+	height: 30px;
 	width: 100%;
 	background-color: #0099ff;
 	border: 2px solid black;
