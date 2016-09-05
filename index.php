@@ -7,6 +7,32 @@
 	<script src="client_side.js"></script>
 </head>
 <body>
+	<?php
+		$mysqli = new mysqli("localhost:8889", "dev", "dev", "PiControllerInfo");
+
+		/* check connection */
+		if (mysqli_connect_errno()) {
+		    printf("Connect failed: %s\n", mysqli_connect_error());
+		    exit();
+		}
+
+		$query = "SELECT * FROM GPIO";
+
+		if ($result = $mysqli->query($query)) {
+
+		    /* fetch object array */
+		    while ($row = $result->fetch_row()) {
+		        printf ("%s (%s)\n", $row[0], $row[1]);
+		    }
+
+		    /* free result set */
+		    $result->close();
+		}
+
+		/* close connection */
+		$mysqli->close();
+	?>
+
 	<div class="header"> <strong>Generic Raspberry Pi Controller</strong> </div>
 	<h2>Physical Pin Layout</h2>
 	<table id="pinlayout">
@@ -57,6 +83,8 @@
 	</table>
 	<p id="pin_numbering_note"> <em>Note: The numbering system is utilizing the gpio numbering system and not the physical pin numbering. </em> </p>
 	<div class="footer"></div>
+
+	<p><?php echo time();?></p>
 
 	<h2> Digital Output Control </h2>
 	<div class="input_group_left">

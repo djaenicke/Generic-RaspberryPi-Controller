@@ -1,0 +1,33 @@
+CREATE TABLE GPIO (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+isOutput BIT NOT NULL DEFAULT 1,
+isHigh BIT NOT NULL DEFAULT 1);
+
+INSERT INTO GPIO (name)
+VALUES
+('GPIO 2'),
+('GPIO 3'),
+('GPIO 4'),
+('GPIO 5'),
+('GPIO 6'),
+('GPIO 7'),
+('GPIO 8'),
+('GPIO 9'),
+('GPIO 10'),
+('GPIO 11'),
+('GPIO 12'),
+('GPIO 13'),
+('GPIO 14'),
+('GPIO 15'),
+('GPIO 16'),
+('GPIO 17'),
+('GPIO 18'),
+('GPIO 19'),
+('GPIO 20'),
+('GPIO 21'),
+('GPIO 22'),
+('GPIO 23'),
+('GPIO 24'),
+('GPIO 25'),
+('GPIO 26'),
+('GPIO 27');
