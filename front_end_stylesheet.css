@@ -1,5 +1,4 @@
 body {
-	background-color: #669999;
 	font-family: Tahoma, Geneva, sans-serif;
 	margin:80px 80px 60px 60px;
 }
@@ -10,6 +9,7 @@ h2 {
 
 #pinlayout{
 	border: 2px solid black;
+	background-color: #DCE1DE;
 	table-layout: fixed;
 }
 
@@ -24,22 +24,22 @@ td.pin {
 
 td.gpio {
 	color: black;
-	background: #0099ff;
+	background: lightblue;
 }
 
 td.gnd {
-	color: black;
-	background: black;
+	color: #3D3A3A;
+	background: #3D3A3A;
 }
 
 td.pwr_5v {
-	color: red;
-	background: red;
+	color: #F36E6E;
+	background: #F36E6E;
 }
 
 td.pwr_3_3v {
-	color: orange;
-	background: orange;
+	color: #F8BD62;
+	background: #F8BD62;
 }
 
 td.id_eeprom {
@@ -53,29 +53,106 @@ div.header {
 	left: 0px;
 	height: 30px;
 	width: 100%;
-	background-color: #0099ff;
+	background-color: lightgreen;
 	border: 2px solid black;
 	text-align: center;
 	padding-top: 5px;
+}
+
+#table_color_key{
+	font-size: .85em;
+	width: fixed;
 }
 
 #pin_numbering_note {
 	font-size: .75em;
 }
 
-div.input_group_left {
-	font-size: .85em;
-	float: left;
+div.output_controls
+{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border: solid black .5px;
 }
 
-div.input_group_right {
-	font-size: .85em;
-	margin-left:100px;
+div.shaded
+{
+	background-color: #DCE1DE;
 }
 
-div.input_label {
-	float: left;
-	width: 4em;
+.output_controls > div {
+    display: table-cell
+}
+
+div.alias_col_header {
+	width: 20%;
+	text-align: center;
+	background-color: lightgreen;
+	border: solid black .5px;
+}
+
+div.phys_pin_col_header {
+	width: 20%;
+	text-align: center;
+	background-color: lightblue;
+	border: solid black .5px;
+}
+
+div.control_col_header {
+	width: 20%;
+	text-align: center;
+	background-color: #F8BD62;
+	border: solid black .5px;
+}
+
+div.direction_col_header {
+	width: 20%;
+	text-align: center;
+	background-color: #CB99C9;
+	border: solid black .5px;
+}
+
+div.state_col_header {
+	width: 20%;
+	text-align: center;
+	background-color: #FF6961;
+	border: solid black .5px;
+}
+
+div.alias_col {
+	width: 20%;
+	text-align: center;
+	font-size: .85em;
+}
+
+div.phys_pin_col {
+	width: 20%;
+	text-align: center;
+	font-size: .85em;
+}
+
+div.direction_col {
+	width: 20%;
+}
+
+.direction_dropdown {
+    display: block;
+    margin : 0 auto;
+}
+
+div.control_col {
+	width: 20%;
+}
+
+.control_checkbox {
+    display: block;
+    margin : 0 auto;
+}
+
+div.state_col {
+	width: 20%;
+	text-align: center;
 }
 
 div.footer {
@@ -84,6 +161,6 @@ div.footer {
 	left: 0px;
 	height: 30px;
 	width: 100%;
-	background-color: #0099ff;
+	background-color: lightgreen;
 	border: 2px solid black;
 }

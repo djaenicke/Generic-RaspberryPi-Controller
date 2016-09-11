@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-<!-- -->
+
 <head>
 	<title> RaspberryPi Generic Controller </title>
 	<link rel="stylesheet" type="text/css"  href="front_end_stylesheet.css"/>
 	<script src="client_side.js"></script>
 </head>
+
 <body>
 	<?php
 		$mysqli = new mysqli("localhost:8889", "dev", "dev", "PiControllerInfo");
@@ -21,17 +22,18 @@
 		if ($result = $mysqli->query($query)) {
 
 		    /* fetch object array */
+		    $gpio_info = array();
 		    while ($row = $result->fetch_row()) {
-		        printf ("%s (%s)\n", $row[0], $row[1]);
+		        $gpio_info[] = $row;
 		    }
 
-		    /* free result set */
+		    /* free the result set */
 		    $result->close();
 		}
 
 		/* close connection */
 		$mysqli->close();
-	?>
+	 ?>
 
 	<div class="header"> <strong>Generic Raspberry Pi Controller</strong> </div>
 	<h2>Physical Pin Layout</h2>
@@ -81,27 +83,93 @@
 		<td class="pin gnd">xx</td>					
 		</tr>
 	</table>
-	<p id="pin_numbering_note"> <em>Note: The numbering system is utilizing the gpio numbering system and not the physical pin numbering. </em> </p>
+
+	<p id="table_color_key"> Color Key: Red = 5V, Black = GND, Orange = 3.3V, Blue = GPIO, White = EEPROM ID </p>
+	<div id="pin_numbering_note"> <em>Note: The numbering system is utilizing the gpio numbering system and not the physical pin numbering. </em> </div>
+
+	<h2> GPIO Control </h2>
+	<div class="output_controls">
+		<div class="alias_col_header"> Alias </div>
+		<div class="phys_pin_col_header"> Pin Number </div>
+		<div class="direction_col_header"> Input/Output </div>
+		<div class="control_col_header"> Off/On </div>
+		<div class="state_col_header"> State </div>
+	</div>
+
+	<?php
+		$id = 0;
+		$name = 1;
+		$isOutput = 2;
+		$isHigh = 3;
+		$cnt = 0;
+
+		foreach ($gpio_info as $current_gpio)
+		{
+			$cnt++;
+			$gpio_num = ($current_gpio[$id] + 1); // GPIO Numbering starts at 2; add one to the ID to align them
+
+			//Determine what the initial state of the checkbox should be
+			if ($current_gpio[$isHigh])
+			{
+				$chkboxVal = "checked";
+				$state = "High";
+			}
+			else 
+			{
+				$chkboxVal = "";
+				$state = "Low";
+			}
+
+			//shade every other row 
+			if ($cnt % 2)
+			{
+				$rowIsShaded = "shaded";
+			}
+			else
+			{
+				$rowIsShaded = "";
+			}
+
+			echo '<div class="output_controls ' .$rowIsShaded. '">
+					  <div class="alias_col">' .$current_gpio[$name].'</div>
+					  <div class="phys_pin_col">' .$gpio_num. '</div>
+
+					  <div class="direction_col">
+  						  <select class="direction_dropdown">';
+  						  	if($current_gpio[$isOutput]) 
+						  	{
+						  		//default dropdown to output
+							    echo '<option value="input">Input</option>
+  									  <option selected value="output">Output</option>';
+  						  	} 
+  						  	else 
+  						  	{
+  						  		//default dropdown to input
+							    echo '<option selected value="input">Input</option>
+  									  <option value="output">Output</option>';
+  						  	}
+  						  	
+				  	  echo'
+				      </select>
+					  </div>
+
+					  <div class="control_col">';
+
+					  if($current_gpio[$isOutput])
+					  	// Enable Off/On checkbox
+					  	echo'<input class="control_checkbox" name="gpio2_cntrl" type="checkbox" ' .$chkboxVal. '>';
+					  else
+					  	// disable Off/On checkbox
+					  	echo'<input class="control_checkbox" disabled name="gpio2_cntrl" type="checkbox" ' .$chkboxVal. '>';
+					  echo'
+					  </div>
+					  <div class="state_col">' .$state. '</div>
+			      </div>';
+		}
+	?>
+
+	<button class="update_config" type="button">Update Settings</button>
+
 	<div class="footer"></div>
-
-	<p><?php echo time();?></p>
-
-	<h2> Digital Output Control </h2>
-	<div class="input_group_left">
-		<div class="input_label"><label for="gpio2_cntrl">GPIO 2</label></div>
-		<input name="gpio2_cntrl" type="checkbox", value="enabled"> 
-	</div>
-	<div class="input_group_right">
-		<div class="input_label"><label for="gpio3_cntrl">GPIO 3</label></div>
-		<input name="gpio3_cntrl" type="checkbox", value="enabled"> 
-	</div>
-		<div class="input_group_left">
-		<div class="input_label"><label for="gpio4_cntrl">GPIO 4</label></div>
-		<input name="gpio4_cntrl" type="checkbox", value="enabled"> 
-	</div>
-	<div class="input_group_right">
-		<div class="input_label"><label for="gpio5_cntrl">GPIO 5</label></div>
-		<input name="gpio5_cntrl" type="checkbox", value="enabled"> 
-	</div>
 </body>
 </html>
