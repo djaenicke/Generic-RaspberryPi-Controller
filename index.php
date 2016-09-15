@@ -4,12 +4,12 @@
 <head>
 	<title> RaspberryPi Generic Controller </title>
 	<link rel="stylesheet" type="text/css"  href="front_end_stylesheet.css"/>
-	<script src="client_side.js"></script>
+	<script src="script.js"></script>
 </head>
 
 <body>
-	<?php
-		$mysqli = new mysqli("localhost:8889", "dev", "dev", "PiControllerInfo");
+	<?
+		$mysqli = new mysqli("localhost:8889", "x", "x", "PiControllerInfo");
 
 		/* check connection */
 		if (mysqli_connect_errno()) {
@@ -156,10 +156,10 @@
 					  <div class="control_col">';
 
 					  if($current_gpio[$isOutput])
-					  	// Enable Off/On checkbox
+					  	//enable the Off/On checkbox
 					  	echo'<input class="control_checkbox" name="gpio2_cntrl" type="checkbox" ' .$chkboxVal. '>';
 					  else
-					  	// disable Off/On checkbox
+					  	//disable the Off/On checkbox
 					  	echo'<input class="control_checkbox" disabled name="gpio2_cntrl" type="checkbox" ' .$chkboxVal. '>';
 					  echo'
 					  </div>
