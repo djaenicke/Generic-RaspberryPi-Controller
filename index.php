@@ -7,7 +7,7 @@
 	<script src="script.js"></script>
 </head>
 
-<body>
+<body onload="onDocumentLoad()">
 	<?
 		$mysqli = new mysqli("localhost:8889", "x", "x", "PiControllerInfo");
 
@@ -135,7 +135,7 @@
 					  <div class="phys_pin_col">' .$gpio_num. '</div>
 
 					  <div class="direction_col">
-  						  <select class="direction_dropdown">';
+  						  <select class="direction_dropdown" data-pin="'.$gpio_num.'">';
   						  	if($current_gpio[$isOutput]) 
 						  	{
 						  		//default dropdown to output
@@ -149,26 +149,26 @@
   									  <option value="output">Output</option>';
   						  	}
   						  	
-				  	  echo'
-				      </select>
+				  	  	  echo'
+				      	  </select>
 					  </div>
 
 					  <div class="control_col">';
 
 					  if($current_gpio[$isOutput])
 					  	//enable the Off/On checkbox
-					  	echo'<input class="control_checkbox" name="gpio2_cntrl" type="checkbox" ' .$chkboxVal. '>';
+					  	echo'<input class="control_checkbox" data-pin="'.$gpio_num.'" type="checkbox" '.$chkboxVal.'>';
 					  else
 					  	//disable the Off/On checkbox
-					  	echo'<input class="control_checkbox" disabled name="gpio2_cntrl" type="checkbox" ' .$chkboxVal. '>';
+					  	echo'<input class="control_checkbox" disabled data-pin="'.$gpio_num.'" type="checkbox" '.$chkboxVal.'>';
 					  echo'
 					  </div>
 					  <div class="state_col">' .$state. '</div>
 			      </div>';
 		}
 	?>
-
-	<button class="update_config" type="button">Update Settings</button>
+	<br>
+	<button class="update_config" type="button">Update Configurations</button>
 
 	<div class="footer"></div>
 </body>
