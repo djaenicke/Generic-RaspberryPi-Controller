@@ -1,71 +1,71 @@
 body {
-	font-family: Tahoma, Geneva, sans-serif;
-	margin:80px 80px 60px 60px;
+  font-family: Tahoma, Geneva, sans-serif;
+  margin:80px 80px 60px 60px;
 }
 
 h2 {
-	font-size: 1em;
+  font-size: 1em;
 }
 
 #pinlayout{
-	border: 2px solid black;
-	background-color: #DCE1DE;
-	table-layout: fixed;
+  border: 2px solid black;
+  background-color: #DCE1DE;
+  table-layout: fixed;
 }
 
 td.pin {
-	text-align: center;
-	width: 1.2em;
-	height: 1.2em;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
+  text-align: center;
+  width: 1.2em;
+  height: 1.2em;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
 }
 
 td.gpio {
-	color: black;
-	background: lightblue;
+  color: black;
+  background: lightblue;
 }
 
 td.gnd {
-	color: #3D3A3A;
-	background: #3D3A3A;
+  color: #3D3A3A;
+  background: #3D3A3A;
 }
 
 td.pwr_5v {
-	color: #F36E6E;
-	background: #F36E6E;
+  color: #F36E6E;
+  background: #F36E6E;
 }
 
 td.pwr_3_3v {
-	color: #F8BD62;
-	background: #F8BD62;
+  color: #F8BD62;
+  background: #F8BD62;
 }
 
 td.id_eeprom {
-	color: white;
-	background: white;
+  color: white;
+  background: white;
 }
 
 div.header {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	height: 30px;
-	width: 100%;
-	background-color: lightgreen;
-	border: 2px solid black;
-	text-align: center;
-	padding-top: 5px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 30px;
+  width: 100%;
+  background-color: lightgreen;
+  border: 2px solid black;
+  text-align: center;
+  padding-top: 5px;
 }
 
 #table_color_key{
-	font-size: .85em;
-	width: fixed;
+  font-size: .85em;
+  width: fixed;
 }
 
 #pin_numbering_note {
-	font-size: .75em;
+  font-size: .75em;
 }
 
 div.output_controls
@@ -78,7 +78,7 @@ div.output_controls
 
 div.shaded
 {
-	background-color: #DCE1DE;
+  background-color: #DCE1DE;
 }
 
 .output_controls > div {
@@ -86,54 +86,54 @@ div.shaded
 }
 
 div.alias_col_header {
-	width: 20%;
-	text-align: center;
-	background-color: lightgreen;
-	border: solid black .5px;
+  width: 20%;
+  text-align: center;
+  background-color: lightgreen;
+  border: solid black .5px;
 }
 
 div.phys_pin_col_header {
-	width: 20%;
-	text-align: center;
-	background-color: lightblue;
-	border: solid black .5px;
+  width: 20%;
+  text-align: center;
+  background-color: lightblue;
+  border: solid black .5px;
 }
 
 div.control_col_header {
-	width: 20%;
-	text-align: center;
-	background-color: #F8BD62;
-	border: solid black .5px;
+  width: 20%;
+  text-align: center;
+  background-color: #F8BD62;
+  border: solid black .5px;
 }
 
 div.direction_col_header {
-	width: 20%;
-	text-align: center;
-	background-color: #CB99C9;
-	border: solid black .5px;
+  width: 20%;
+  text-align: center;
+  background-color: #CB99C9;
+  border: solid black .5px;
 }
 
 div.state_col_header {
-	width: 20%;
-	text-align: center;
-	background-color: #FF6961;
-	border: solid black .5px;
+  width: 20%;
+  text-align: center;
+  background-color: #FF6961;
+  border: solid black .5px;
 }
 
 div.alias_col {
-	width: 20%;
-	text-align: center;
-	font-size: .85em;
+  width: 20%;
+  text-align: center;
+  font-size: .85em;
 }
 
 div.phys_pin_col {
-	width: 20%;
-	text-align: center;
-	font-size: .85em;
+  width: 20%;
+  text-align: center;
+  font-size: .85em;
 }
 
 div.direction_col {
-	width: 20%;
+  width: 20%;
 }
 
 .direction_dropdown {
@@ -142,7 +142,7 @@ div.direction_col {
 }
 
 div.control_col {
-	width: 20%;
+  width: 20%;
 }
 
 .control_checkbox {
@@ -151,21 +151,21 @@ div.control_col {
 }
 
 div.state_col {
-	width: 20%;
-	text-align: center;
+  width: 20%;
+  text-align: center;
 }
 
 div.update_config {
-	
+
 
 }
 
 div.footer {
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	height: 30px;
-	width: 100%;
-	background-color: lightgreen;
-	border: 2px solid black;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 30px;
+  width: 100%;
+  background-color: lightgreen;
+  border: 2px solid black;
 }

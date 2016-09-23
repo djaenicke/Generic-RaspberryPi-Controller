@@ -1,18 +1,22 @@
 <?php
 // get the pin and value parameters from URL
-$pin_number = $_REQUEST["pin"];
+$id = $_REQUEST["id"];
 $direction  = $_REQUEST["value"];
 
-$mysqli = new mysqli("localhost:8889", "x", "x", "PiControllerInfo");
+require_once 'login.php';
+$connection = new mysqli($hostname, $username, $password, $database);
+if ($connection->connect_error) die($connection->connect_error);
 
-/* check connection */
-if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
+if($direction == "output")
+{
+  $query = "UPDATE GPIO SET isOutput=1 WHERE id=$id";
+}
+elseif ($direction == "input") {
+  $query = "UPDATE GPIO SET isOutput=0 WHERE id=$id";
 }
 
-/* close connection */
-$mysqli->close();
+$result = $connection->query($query);
+if (!$result) die($connection->connect_error);
 
 echo $direction;
 ?>
