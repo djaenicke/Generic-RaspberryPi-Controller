@@ -152,7 +152,7 @@
               echo'<input class="control_checkbox" id="checkbox_'.$current_gpio['id'].'" disabled data-id="'.$current_gpio['id'].'" type="checkbox"'.$chkboxVal.'>';
             echo'
             </div>
-            <div class="state_col">' .$state. '</div>
+            <div class="state_col" id="state_'.$current_gpio['id'].'">'.$state.'</div>
             </div>';
     }
   ?>

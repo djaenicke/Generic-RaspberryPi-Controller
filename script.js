@@ -1,13 +1,16 @@
+/******************************************************************************
+ * Event handler for when the dropdown is changed
+ ******************************************************************************/
 var toggle_io_direction = function(e) {
   var xmlhttp = new XMLHttpRequest();
 
   var chkbox = document.getElementById("checkbox_" + e.target.dataset.id);
 
   if(e.target.value == 'input') {
-    chkbox.disabled = true;
+    chkbox.disabled = true; //Disable the Off/On checkbox if configured as input
   }
   else {
-    chkbox.disabled = false;
+    chkbox.disabled = false; //Enable the Off/On checkbox if configured as output
   }
 
   xmlhttp.open("GET", "update_io_direction.php?id=" + e.target.dataset.id + "&value=" + e.target.value, true);
@@ -20,14 +23,20 @@ var toggle_io_direction = function(e) {
   };
 }
 
+/******************************************************************************
+ * Event handler for when the checkbox is changed
+ ******************************************************************************/
 var switch_output_state = function(e) {
   var isHigh;
+  var state = document.getElementById("state_" + e.target.dataset.id);
 
   if(e.srcElement.checked) {
     isHigh = 'true';
+    state.innerText = "High" //Make the state match the checkbox value
   }
   else {
     isHigh = 'false';
+    state.innerText = "Low" //Make the state match the checkbox value
   }
 
   var xmlhttp = new XMLHttpRequest();
@@ -42,6 +51,9 @@ var switch_output_state = function(e) {
   };
 }
 
+/******************************************************************************
+ * Function for configuring the event handlers when the document is loaded
+ ******************************************************************************/
 function onDocumentLoad(){
   var checkboxes = document.querySelectorAll('.control_checkbox');
 
