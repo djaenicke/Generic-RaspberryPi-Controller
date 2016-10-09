@@ -4,7 +4,7 @@
 var toggle_io_direction = function(e) {
   var xmlhttp = new XMLHttpRequest();
 
-  var chkbox = document.getElementById("checkbox_" + e.target.dataset.id);
+  var chkbox = document.getElementById("control_checkbox_" + e.target.dataset.id);
 
   if(e.target.value == 'input') {
     chkbox.disabled = true; //Disable the Off/On checkbox if configured as input
@@ -55,15 +55,15 @@ var switch_output_state = function(e) {
  * Function for configuring the event handlers when the document is loaded
  ******************************************************************************/
 function onDocumentLoad(){
-  var checkboxes = document.querySelectorAll('.control_checkbox');
+  var control_checkboxes = document.querySelectorAll('.control_checkbox');
 
-  checkboxes.forEach(function(box){
+  control_checkboxes.forEach(function(box){
     box.addEventListener('click', switch_output_state);
   });
 
-  var selectors = document.querySelectorAll('.direction_dropdown');
+  var direction_selectors = document.querySelectorAll('.direction_dropdown');
 
-  selectors.forEach(function(selector){
+  direction_selectors.forEach(function(selector){
     selector.addEventListener('change', toggle_io_direction);
   });
 }

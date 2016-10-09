@@ -80,7 +80,7 @@
   </table>
 
   <p id="table_color_key"> Color Key: Red = 5V, Black = GND, Orange = 3.3V, Blue = GPIO, White = EEPROM ID </p>
-  <div id="pin_numbering_note"> <em>Note: The numbering system is utilizing the gpio numbering system and not the physical pin numbering. </em> </div>
+  <div id="pin_numbering_note"> <em>Note: The numbering system is utilizing the Broadcom SOC channel number and not the physical pin numbering. </em> </div>
 
   <h2> GPIO Control </h2>
   <div class="output_controls">
@@ -146,10 +146,10 @@
 
             if($current_gpio['isOutput'])
               //enable the Off/On checkbox
-              echo'<input class="control_checkbox" id="checkbox_'.$current_gpio['id'].'" data-id="'.$current_gpio['id'].'" type="checkbox"'.$chkboxVal.'>';
+              echo'<input class="control_checkbox" id="control_checkbox_'.$current_gpio['id'].'" data-id="'.$current_gpio['id'].'" type="checkbox"'.$chkboxVal.'>';
             else
               //disable the Off/On checkbox
-              echo'<input class="control_checkbox" id="checkbox_'.$current_gpio['id'].'" disabled data-id="'.$current_gpio['id'].'" type="checkbox"'.$chkboxVal.'>';
+              echo'<input class="control_checkbox" id="control_checkbox_'.$current_gpio['id'].'" disabled data-id="'.$current_gpio['id'].'" type="checkbox"'.$chkboxVal.'>';
             echo'
             </div>
             <div class="state_col" id="state_'.$current_gpio['id'].'">'.$state.'</div>
@@ -158,8 +158,7 @@
   ?>
 
   <br>
-  <button class="update_config" type="button">Update Configurations</button>
-
+  <input class="button" type=button onClick="location.href='config.php'" value='Update Configurations'>
   <div class="footer"></div>
 </body>
 </html>

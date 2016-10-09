@@ -70,10 +70,26 @@ div.header {
 
 div.output_controls
 {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    border: solid black .5px;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border: solid black .5px;
+}
+
+.output_controls > div {
+  display: table-cell;
+}
+
+div.config_updates
+{
+  display: table;
+  width: 80%;
+  table-layout: fixed;
+  border: solid black .5px;
+}
+
+.config_updates > div {
+  display: table-cell;
 }
 
 div.shaded
@@ -81,10 +97,7 @@ div.shaded
   background-color: #DCE1DE;
 }
 
-.output_controls > div {
-    display: table-cell
-}
-
+/* Control Header Column Classes */
 div.alias_col_header {
   width: 20%;
   text-align: center;
@@ -99,17 +112,17 @@ div.phys_pin_col_header {
   border: solid black .5px;
 }
 
-div.control_col_header {
-  width: 20%;
-  text-align: center;
-  background-color: #F8BD62;
-  border: solid black .5px;
-}
-
 div.direction_col_header {
   width: 20%;
   text-align: center;
   background-color: #CB99C9;
+  border: solid black .5px;
+}
+
+div.control_col_header {
+  width: 20%;
+  text-align: center;
+  background-color: #F8BD62;
   border: solid black .5px;
 }
 
@@ -120,6 +133,42 @@ div.state_col_header {
   border: solid black .5px;
 }
 
+/* Config Header Column Classes */
+div.alias_config_col_header {
+  width: 20%;
+  text-align: center;
+  background-color: lightgreen;
+  border: solid black .5px;
+}
+
+div.pullup_enable_col_header {
+  width: 20%;
+  text-align: center;
+  background-color: lightblue;
+  border: solid black .5px;
+}
+
+div.pullup_type_col_header {
+  width: 20%;
+  text-align: center;
+  background-color: #CB99C9;
+  border: solid black .5px;
+}
+
+div.display_enable_col_header {
+  width: 20%;
+  text-align: center;
+  background-color: #F8BD62;
+  border: solid black .5px;
+}
+
+div.blank_col_header {
+  width: 20%;
+  text-align: center;
+  background-color: white;
+}
+
+/* Control Column Classes */
 div.alias_col {
   width: 20%;
   text-align: center;
@@ -155,10 +204,56 @@ div.state_col {
   text-align: center;
 }
 
-div.update_config {
-
-
+/* Conif Column Classes */
+div.alias_config_col {
+  width: 25%;
+  text-align: center;
+  font-size: .85em;
 }
+
+.alias_input {
+  border: solid black .5px;
+}
+
+div.pullup_enable_col {
+  width: 25%;
+}
+
+.pullup_enable_checkbox {
+    display: block;
+    margin : 0 auto;
+}
+
+div.pullup_type_col {
+  width: 25%;
+}
+
+.pullup_type_dropdown {
+    display: block;
+    margin : 0 auto;
+}
+
+div.display_col {
+  width: 25%;
+}
+
+.display_enable_checkbox {
+    display: block;
+    margin : 0 auto;
+}
+
+input.button {
+  border-radius: 12px;
+  background-color: white;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+input.button:hover {
+    background-color: lightgreen;
+    color: black;
+}
+
 
 div.footer {
   position: fixed;
