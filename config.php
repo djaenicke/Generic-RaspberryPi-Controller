@@ -33,6 +33,7 @@
 
 <h2> GPIO Configurations </h2>
   <div class="config_updates">
+    <div class="phys_pin_config_col_header">Pin Number</div>
     <div class="alias_config_col_header">Alias</div>
     <div class="pullup_enable_col_header">Pull Up Enable</div>
     <div class="pullup_type_col_header">Pull Up Type</div>
@@ -42,6 +43,8 @@
   <?php
     foreach ($gpio_info as $current_gpio)
     {
+      $gpio_num = ($current_gpio['id'] + 1); // GPIO Numbering starts at 2; add one to the ID to align them
+
       $cnt++;
 
       //shade every other row
@@ -55,6 +58,7 @@
       }
 
       echo'<div class="config_updates ' .$rowIsShaded. '">
+              <div class="phy_pin_config_col">' .$gpio_num. '</div>
               <div class="alias_config_col">
                  <input class="alias_input" type="text" name="gpio_alias_'.$current_gpio['id'].'">
               </div>';

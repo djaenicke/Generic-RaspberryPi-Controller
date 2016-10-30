@@ -71,7 +71,7 @@ div.header {
 div.output_controls
 {
   display: table;
-  width: 100%;
+  width: 80%;
   table-layout: fixed;
   border: solid black .5px;
 }
@@ -134,38 +134,39 @@ div.state_col_header {
 }
 
 /* Config Header Column Classes */
-div.alias_config_col_header {
+div.phys_pin_config_col_header {
   width: 20%;
   text-align: center;
   background-color: lightgreen;
   border: solid black .5px;
 }
 
-div.pullup_enable_col_header {
+div.alias_config_col_header {
   width: 20%;
   text-align: center;
   background-color: lightblue;
   border: solid black .5px;
 }
 
-div.pullup_type_col_header {
+div.pullup_enable_col_header {
   width: 20%;
   text-align: center;
   background-color: #CB99C9;
   border: solid black .5px;
 }
 
-div.display_enable_col_header {
+div.pullup_type_col_header {
   width: 20%;
   text-align: center;
   background-color: #F8BD62;
   border: solid black .5px;
 }
 
-div.blank_col_header {
+div.display_enable_col_header {
   width: 20%;
   text-align: center;
-  background-color: white;
+  background-color: #FF6961;
+  border: solid black .5px;
 }
 
 /* Control Column Classes */
@@ -205,8 +206,13 @@ div.state_col {
 }
 
 /* Conif Column Classes */
+div.phy_pin_config_col {
+  width: 20%;
+  text-align: center;
+}
+
 div.alias_config_col {
-  width: 25%;
+  width: 20%;
   text-align: center;
   font-size: .85em;
 }
@@ -216,7 +222,7 @@ div.alias_config_col {
 }
 
 div.pullup_enable_col {
-  width: 25%;
+  width: 20%;
 }
 
 .pullup_enable_checkbox {
@@ -225,7 +231,7 @@ div.pullup_enable_col {
 }
 
 div.pullup_type_col {
-  width: 25%;
+  width: 20%;
 }
 
 .pullup_type_dropdown {
@@ -234,7 +240,7 @@ div.pullup_type_col {
 }
 
 div.display_col {
-  width: 25%;
+  width: 20%;
 }
 
 .display_enable_checkbox {
