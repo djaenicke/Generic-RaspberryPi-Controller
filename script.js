@@ -13,7 +13,7 @@ var toggle_io_direction = function(e) {
     chkbox.disabled = false; //Enable the Off/On checkbox if configured as output
   }
 
-  xmlhttp.open("GET", "update_io_direction.php?id=" + e.target.dataset.id + "&value=" + e.target.value, true);
+  xmlhttp.open("GET", "update_handler.php?id=" + e.target.dataset.id + "&direction=" + e.target.value, true);
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() {
@@ -41,7 +41,7 @@ var switch_output_state = function(e) {
 
   var xmlhttp = new XMLHttpRequest();
 
-  xmlhttp.open("GET", "update_output_status.php?id=" + e.target.dataset.id + "&value=" + isHigh, true);
+  xmlhttp.open("GET", "update_handler.php?id=" + e.target.dataset.id + "&output_status=" + isHigh, true);
   xmlhttp.send();
 
   xmlhttp.onreadystatechange = function() {
