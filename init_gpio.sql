@@ -1,7 +1,10 @@
-CREATE TABLE GPIO (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(50) NOT NULL,
-isOutput TINYINT DEFAULT 1,
-isHigh TINYINT DEFAULT 0);
+CREATE TABLE GPIO (id          INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                   name        VARCHAR(50) NOT NULL,
+                   isOutput    TINYINT     DEFAULT 1,
+                   isHigh      TINYINT     DEFAULT 0,
+                   isDisplayed TINYINT     DEFAULT 1,
+                   isPulled    TINYINT     DEFAULT 1,
+                   pullType    VARCHAR(4)  DEFAULT 'Down');
 
 INSERT INTO GPIO (name)
 VALUES
