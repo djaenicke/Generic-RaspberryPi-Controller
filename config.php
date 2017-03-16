@@ -37,9 +37,11 @@
             <div class="config_updates <?php echo $rowIsShaded;?>">
                 <div class="phy_pin_config_col"><?php echo $current_gpio['id'];?></div>
 
-                <?php $name = sprintf("gpio_alias_%d", $current_gpio['id']); ?>
+                <?php $id = sprintf("gpio_alias_%d", $current_gpio['id']); ?>
                 <div class="alias_config_col">
-                    <input class="alias_input" type="text" size="35" name=<?php echo $name; ?> value="<?php echo $current_gpio['name']; ?>">
+                    <input class="alias_input" type="text" size="25" id=<?php echo $id; ?> value="<?php echo $current_gpio['name']; ?>">
+                    <?php $name = sprintf("update_btn_%d", $current_gpio['id']); ?>
+                    <input class="update_button" type=button data-id="<?php echo $current_gpio['id'];?>" value='update'>
                 </div>
 
                 <?php

@@ -272,11 +272,23 @@ input.button {
   transition-duration: 0.4s;
 }
 
+input.update_button {
+  background-color: white;
+  font-size: .7em;
+  padding: 2px 6px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
 input.button:hover {
     background-color: #F0F2FE;
     color: black;
 }
 
+input.update_button:hover {
+    background-color: #F0F2FE;
+    color: black;
+}
 
 div.footer {
   position: fixed;

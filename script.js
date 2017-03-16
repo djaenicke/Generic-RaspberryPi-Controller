@@ -62,6 +62,26 @@ var switch_output_state = function(e)
 }
 
 /******************************************************************************
+ * Event handler for when the update button is clicked
+ ******************************************************************************/
+var update_alias = function(e)
+{
+    var alias = document.getElementById("gpio_alias_" + e.target.dataset.id);;
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", "update_handler.php?id=" + e.target.dataset.id + "&name=" + alias.value, true);
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            console.log(this.responseText);
+        }
+    };
+}
+
+/******************************************************************************
  * Event handler for when the Pull Up Enable checkbox is changed
  ******************************************************************************/
 var enable_disable_pullup = function(e)
@@ -157,21 +177,27 @@ function onDocumentLoad()
     selector.addEventListener('change', toggle_io_direction);
     });
 
-    var direction_selectors = document.querySelectorAll('.pullup_enable_checkbox');
+    var update_alias_selectors = document.querySelectorAll('.update_button');
 
-    direction_selectors.forEach(function(selector){
+    update_alias_selectors.forEach(function(selector){
+    selector.addEventListener('click', update_alias);
+    });
+
+    var pullup_enable_selectors = document.querySelectorAll('.pullup_enable_checkbox');
+
+    pullup_enable_selectors.forEach(function(selector){
     selector.addEventListener('click', enable_disable_pullup);
     });
 
-    var direction_selectors = document.querySelectorAll('.pullup_type_dropdown');
+    var pullup_type_selectors = document.querySelectorAll('.pullup_type_dropdown');
 
-    direction_selectors.forEach(function(selector){
+    pullup_type_selectors.forEach(function(selector){
     selector.addEventListener('change', toggle_pull_type);
     });
 
-    var direction_selectors = document.querySelectorAll('.display_enable_checkbox');
+    var display_enable_selectors = document.querySelectorAll('.display_enable_checkbox');
 
-    direction_selectors.forEach(function(selector){
+    display_enable_selectors.forEach(function(selector){
     selector.addEventListener('click', update_display_state);
     });
 }
