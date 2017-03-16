@@ -134,6 +134,7 @@
                 <div class="control_col">
                     <input class="control_checkbox" id="<?php echo $id;?>" data-id="<?php echo $current_gpio['id'];?>" <?php echo $status;?> type="checkbox" <?php echo $chkboxVal; ?>>
                 </div>
+
                 <?php $id = sprintf("state_%d", $current_gpio['id']);?>
                 <div class="state_col" id="<?php echo $id;?>"><?php echo $state;?></div>
             </div>

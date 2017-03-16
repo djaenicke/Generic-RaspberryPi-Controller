@@ -71,8 +71,8 @@
                 ?>
                 <div class="pullup_type_col">
                      <select class="pullup_type_dropdown" data-id="<?php echo $current_gpio['id'];?>">
-                        <option <?php echo $up_select;?>="pullup">Pull-Up</option>
-                        <option <?php echo $down_select;?>="pulldown">Pull-Down</option>
+                        <option <?php echo $up_select;?>="Up">Pull-Up</option>
+                        <option <?php echo $down_select;?>="Down">Pull-Down</option>
                      </select>
                 </div>
 
