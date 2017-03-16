@@ -39,7 +39,7 @@
 
                 <?php $name = sprintf("gpio_alias_%d", $current_gpio['id']); ?>
                 <div class="alias_config_col">
-                    <input class="alias_input" type="text" name=<?php echo $name; ?> value="<?php echo $current_gpio['name']; ?>">
+                    <input class="alias_input" type="text" size="35" name=<?php echo $name; ?> value="<?php echo $current_gpio['name']; ?>">
                 </div>
 
                 <?php

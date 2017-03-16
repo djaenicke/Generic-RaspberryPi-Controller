@@ -1,10 +1,14 @@
 body {
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: Lucida Sans Unicode;
   margin:80px 80px 60px 60px;
+  background-color: #DFE2DB;
+  font-size: .9em;
 }
 
 h2 {
-  font-size: 1em;
+  font-size: .9em;
+  font-family: Lucida Sans Unicode;
+  text-decoration: underline;
 }
 
 #pinlayout{
@@ -53,7 +57,7 @@ div.header {
   left: 0px;
   height: 30px;
   width: 100%;
-  background-color: lightgreen;
+  background-color: #0A8754;
   border: 2px solid black;
   text-align: center;
   padding-top: 5px;
@@ -71,9 +75,10 @@ div.header {
 div.output_controls
 {
   display: table;
-  width: 80%;
+  width: 60%;
   table-layout: fixed;
-  border: solid black .5px;
+  border: solid gray .5px;
+  background-color: #F0F2FE;
 }
 
 .output_controls > div {
@@ -83,9 +88,10 @@ div.output_controls
 div.config_updates
 {
   display: table;
-  width: 80%;
+  width: 60%;
   table-layout: fixed;
-  border: solid black .5px;
+  border: solid gray .5px;
+  background-color: #F0F2FE;
 }
 
 .config_updates > div {
@@ -94,78 +100,87 @@ div.config_updates
 
 div.shaded
 {
-  background-color: #DCE1DE;
+  background-color: #DFE2DB;
 }
 
 /* Control Header Column Classes */
 div.alias_col_header {
   width: 20%;
+  font-size: .88em;
   text-align: center;
-  background-color: lightgreen;
+  background-color: #0A8754;
   border: solid black .5px;
 }
 
 div.phys_pin_col_header {
-  width: 20%;
+  width: 10%;
+  font-size: .88em;
   text-align: center;
-  background-color: lightblue;
+  background-color: #508CA4;
   border: solid black .5px;
 }
 
 div.direction_col_header {
   width: 20%;
+  font-size: .88em;
   text-align: center;
-  background-color: #CB99C9;
+  background-color: #91AEC1;
   border: solid black .5px;
 }
 
 div.control_col_header {
-  width: 20%;
+  width: 10%;
+  font-size: .88em;
   text-align: center;
-  background-color: #F8BD62;
+  background-color: #0A8754;
   border: solid black .5px;
 }
 
 div.state_col_header {
   width: 20%;
+  font-size: .88em;
   text-align: center;
-  background-color: #FF6961;
+  background-color: #508CA4;
   border: solid black .5px;
 }
 
 /* Config Header Column Classes */
 div.phys_pin_config_col_header {
-  width: 20%;
+  width: 10%;
+  font-size: .88em;
   text-align: center;
-  background-color: lightgreen;
+  background-color: #0A8754;
   border: solid black .5px;
 }
 
 div.alias_config_col_header {
-  width: 20%;
+  width: 25%;
   text-align: center;
-  background-color: lightblue;
+  background-color: #508CA4;
   border: solid black .5px;
 }
 
 div.pullup_enable_col_header {
-  width: 20%;
+  width: 15%;
+  font-size: .88em;
   text-align: center;
-  background-color: #CB99C9;
+  background-color: #91AEC1;
   border: solid black .5px;
 }
 
 div.pullup_type_col_header {
-  width: 20%;
+  width: 25%;
+  font-size: .88em;
   text-align: center;
-  background-color: #F8BD62;
+  background-color: #0A8754;
   border: solid black .5px;
 }
 
 div.display_enable_col_header {
-  width: 20%;
+  width: 15%;
+  font-size: .88em;
   text-align: center;
-  background-color: #FF6961;
+  background-color: #508CA4;
   border: solid black .5px;
 }
 
@@ -177,7 +192,7 @@ div.alias_col {
 }
 
 div.phys_pin_col {
-  width: 20%;
+  width: 10%;
   text-align: center;
   font-size: .85em;
 }
@@ -192,7 +207,7 @@ div.direction_col {
 }
 
 div.control_col {
-  width: 20%;
+  width: 10%;
 }
 
 .control_checkbox {
@@ -202,17 +217,19 @@ div.control_col {
 
 div.state_col {
   width: 20%;
+  font-size: .85em;
   text-align: center;
 }
 
 /* Conif Column Classes */
 div.phy_pin_config_col {
-  width: 20%;
+  width: 10%;
   text-align: center;
+  font-size: .85em;
 }
 
 div.alias_config_col {
-  width: 20%;
+  width: 25%;
   text-align: center;
   font-size: .85em;
 }
@@ -222,7 +239,7 @@ div.alias_config_col {
 }
 
 div.pullup_enable_col {
-  width: 20%;
+  width: 15%;
 }
 
 .pullup_enable_checkbox {
@@ -231,7 +248,7 @@ div.pullup_enable_col {
 }
 
 div.pullup_type_col {
-  width: 20%;
+  width: 25%;
 }
 
 .pullup_type_dropdown {
@@ -240,7 +257,7 @@ div.pullup_type_col {
 }
 
 div.display_col {
-  width: 20%;
+  width: 15%;
 }
 
 .display_enable_checkbox {
@@ -256,7 +273,7 @@ input.button {
 }
 
 input.button:hover {
-    background-color: lightgreen;
+    background-color: #F0F2FE;
     color: black;
 }
 
@@ -267,6 +284,6 @@ div.footer {
   left: 0px;
   height: 30px;
   width: 100%;
-  background-color: lightgreen;
+  background-color: #0A8754;
   border: 2px solid black;
 }
