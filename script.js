@@ -221,16 +221,16 @@ function updatePage()
             myObj = JSON.parse(this.responseText);
             for (var key in myObj)
             {
-                if (myObj.hasOwnProperty(key))
+                if (myObj.hasOwnProperty(key) && document.getElementById("state_" + key))
                 {
                     var val = myObj[key];
                     if (val == 1)
                     {
-                        document.getElementById("state_" + key).innerHTML = "High";
+                        document.getElementById("state_" + key).innerHTML = 'High';
                     }
                     else
                     {
-                        document.getElementById("state_" + key).innerHTML = "Low";
+                        document.getElementById("state_" + key).innerHTML = 'Low';
                     }
                 }
             }
