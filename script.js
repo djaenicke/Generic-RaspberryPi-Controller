@@ -200,4 +200,40 @@ function onDocumentLoad()
     display_enable_selectors.forEach(function(selector){
     selector.addEventListener('click', update_display_state);
     });
+
+    setInterval(updatePage, 1000);
+}
+
+/******************************************************************************
+ * Function for updating the GPIO's State periodically
+ ******************************************************************************/
+function updatePage()
+{
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", "gpio_state_api.php");
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            myObj = JSON.parse(this.responseText);
+            for (var key in myObj)
+            {
+                if (myObj.hasOwnProperty(key))
+                {
+                    var val = myObj[key];
+                    if (val == 1)
+                    {
+                        document.getElementById("state_" + key).innerHTML = "High";
+                    }
+                    else
+                    {
+                        document.getElementById("state_" + key).innerHTML = "Low";
+                    }
+                }
+            }
+        }
+    };
 }
